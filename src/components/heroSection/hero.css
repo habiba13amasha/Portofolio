@@ -1,0 +1,58 @@
+.left-section{
+    flex-grow:1 ;
+}
+section{
+    margin-top: 3rem;
+}
+.avatar{
+    width: 70px;
+    border-radius: 40px;
+    border: 1px solid bisque;
+    padding: 0.8px;
+    margin-right: 1px;
+    
+}
+.icon-star{
+    background-color: rgba(39, 39, 229, 0.84);
+    border-radius: 7px;
+    display: inline-block;
+    margin-bottom: 1rem;
+
+    
+}
+.all-icons{
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
+    margin-top: 10px;
+    font-size: 1.4rem;
+    color: var(--subtitel);
+    
+}
+.icon:hover{
+    font-size: 1.6rem;
+    color: var(--icon-hover);
+    transition: 0.2s;
+    cursor: pointer;
+}
+h1.titel{
+   font-size: 3rem;
+   margin: 10px 0;
+   color: var(--titel);
+}
+p.subtitel{
+    color: var(--subtitel);
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    margin-bottom: 20px;
+}
+
+@media (max-width:670px){
+    .container{
+        width: 98%;
+        padding:0 , 1.5rem;
+    }
+    
+
+}
+

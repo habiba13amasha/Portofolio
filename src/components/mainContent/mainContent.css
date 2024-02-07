@@ -1,0 +1,44 @@
+.main{
+    display: flex;
+    align-items: start;
+    gap:2rem;
+}
+.right-side{
+    flex-grow: 1;
+}
+.left-side{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    margin: 5px 10px; 
+}
+.left-side button{
+    
+    width: 10rem;
+    background-color: rgb(18, 18, 49);
+    padding: 5px;
+    text-align: center;
+    font-size: 1.07rem;
+    text-transform:capitalize ;
+    opacity: 0.5;
+    border-radius: 10px;
+    color: var(--titel);
+    transition: 0.2s;
+}
+.left-side button:hover{
+    opacity: 1;
+}
+button.active{
+    opacity: 1;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    padding: 8px;
+    border: 1px solid var(--blue);
+
+}
+div.links{
+    display: flex;
+    align-items: center;
+    gap:2rem;
+}
