@@ -4,14 +4,48 @@
     gap:2rem;
 }
 .right-side{
-    flex-grow: 1;
+    /*flex-grow: 1;*/
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px ;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    border: 1px solid rgba(45, 160, 237, 0.934);
+    border-radius: 7px;
+    background-image: linear-gradient(rgba(99, 79, 130, 0.728),rgba(57, 121, 193, 0.281),rgba(57, 193, 159, 0.281));
+}
+.card:hover{
+    border: 2px solid var(--blue);
+    rotate: 1deg;
+    scale: 1.01;
+    cursor: pointer;
+}
+.card img{
+    border-radius: 7px;
+}
+.box{
+    padding:0.5rem 0.5rem;
+}
+.box .titel{
+    color: var(--titel);
+    font-size: 2rem;
+}
+.box .subtitel{
+    color: var(--subtitel);
+    font-size: 0.8rem;
+    margin-top: 0.7rem;
+    margin-bottom: 0.8rem;
+
 }
 .left-side{
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 10px;
-    margin: 5px 10px; 
+    margin-left: 15px ; 
+
 }
 .left-side button{
     
@@ -40,5 +74,40 @@ button.active{
 div.links{
     display: flex;
     align-items: center;
-    gap:2rem;
+    justify-content: space-between;
+    color: var(--subtitel);
+
+}
+.links .icons{
+    display: flex;
+    gap: 20px;
+    font-size: 1.2rem;
+   
+}
+div.links .icon-unlink:hover,.icon-github:hover{
+  color: var(--blue);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.more-link{
+    font-size: 0.9rem;
+    color: var(--blue);
+}
+@media (max-width:670px){
+    .main{
+        display: flex;
+        align-items: center;
+        gap:2rem;
+        flex-direction: column;
+    }
+    .left-side{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    
+
 }
