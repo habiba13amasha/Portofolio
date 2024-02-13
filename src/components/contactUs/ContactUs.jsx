@@ -1,27 +1,45 @@
 import React from 'react'
 import "./contactUs.css"
+import Lottie from "lottie-react"
+import { useForm, ValidationError } from '@formspree/react';
+import DoneAnimation from "../../../public/animation/DoneAnimation.json"
+import EmailAnimation from "../../../public/animation/EmailAnimation.json"
+
 export default function ContactUs() {
+ const [state, handleSubmit] = useForm("mvoeagyd");
+ if (state.succeeded) {
+  return(<> 
+        <h1>
+         <Lottie animationData={DoneAnimation} loop={false} style={{height:30}}/>
+         Thanks for joining!
+        </h1>
+        </>
+      )}
+
   return (
-    <section className='contact-us'>
+    <section className='contact-us ' style={{margin: "15px"}} >
       <h1 className='contact-header'>
         <span className='icon-envelope'></span>
         ContactUs
       </h1>
       <p className='paraghraph'>Contact us for more information and Get notified when I publish something new.</p>
-      <div className="email-contact">
-        <form >
+      <div className="email-contact" style={{justifyContent:"space-between"}}>
+        <form onSubmit={handleSubmit}>
           <div className='email'style={{margin: "15px"}}>
-            <label for="email">Email Address:</label>
-            <input type='email' id="email"></input>
+            <label htmlFor="email">Email Address:</label>
+            <input type='email' id="email" name='email' autoComplete='off' required></input>
+            <ValidationError prefix="Email" field="email" errors={state.errors} />
             </div>
           <div className='Message'>
-            <label for="Message">Your Message:</label>
-            <textarea id="Message"></textarea>
+            <label htmlFor="Message">Your Message:</label>
+            <textarea id="Message" name='Message' required></textarea>
+            <ValidationError prefix="Message"  field="message" errors={state.errors}/>
           </div>
-          <button style={{margin: "15px"}}>Submit</button>
-          
+          <button className='submit' type="submit" disabled={state.submitting}>Submit</button>  
         </form>
-        <div className="animatin"></div>
+        <div className="animation">
+         <Lottie animationData={EmailAnimation} style={{height:350}} />
+        </div>
       </div>
     </section>
   )

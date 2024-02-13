@@ -1,8 +1,19 @@
 import React from 'react'
 import './appHeader.css'
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 export default function AppHeader() {
   const [showmodel,setshowmodel]=useState(false)
+  const[theme,settheme]=useState(localStorage.getItem("currentmode") ?? "dark")
+  useEffect(() => {
+    if(theme==="light"){
+      document.body.classList.remove("dark")
+      document.body.classList.add("light")
+    }else{
+      document.body.classList.remove("light")
+      document.body.classList.add("dark")
+    }
+   
+  }, [theme]);
   return (
     <header className='flex'>
       <button className='menu  icon-menu  flex' onClick={()=>{ setshowmodel(true);}} />
@@ -16,8 +27,11 @@ export default function AppHeader() {
           <li><a href="">Contact</a></li>
         </ul>
       </nav>
-      <button className='mode  flex'>
-        <span className='icon-moon-o'></span>
+      <button onClick={()=>{
+        localStorage.setItem("currentmode",theme==="dark"?"light":"dark")
+        settheme(localStorage.getItem("currentmode"))
+        }} className='mode  flex'>
+        {theme==="dark"?(<span className='icon-moon-o'></span>):(<span className='icon-sun'></span>)} 
       </button>
       {showmodel &&(
        <div className=" fixed" >

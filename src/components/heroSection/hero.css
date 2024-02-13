@@ -47,12 +47,8 @@ p.subtitel{
     margin-bottom: 20px;
 }
 
-@media (max-width:670px){
-    .container{
-        width: 98%;
-        padding:0 , 1.5rem;
-    }
-    
-
+.animation{
+    width: 100%;
+    translate: 100px 50px ;
 }
 
