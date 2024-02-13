@@ -9,10 +9,8 @@ export default function ContactUs() {
  const [state, handleSubmit] = useForm("mvoeagyd");
  if (state.succeeded) {
   return(<> 
-        <h1>
-         <Lottie animationData={DoneAnimation} loop={false} style={{height:30}}/>
-         Thanks for joining!
-        </h1>
+        <h1 style={{textAlign:"center" , marginBottom:"5px"}}>Thanks for joining!</h1>
+        <Lottie animationData={DoneAnimation} style={{height:60}}/>
         </>
       )}
 
